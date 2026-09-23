@@ -12,7 +12,6 @@ class SleepWakeService extends ChangeNotifier {
   SleepWakeState current = SleepWakeState('resting', 0.6);
   double _eyeClosedSecs = 0;
   double _stillSecs = 0;
-  DateTime? _lastActive;
 
   void update({
     required bool facePresent,
@@ -33,7 +32,6 @@ class SleepWakeService extends ChangeNotifier {
     } else {
       _eyeClosedSecs = 0;
       _stillSecs = 0;
-      _lastActive = DateTime.now();
       _set('awake', 0.9);
       return;
     }

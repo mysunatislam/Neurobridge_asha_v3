@@ -43,11 +43,24 @@ class AssessmentService extends ChangeNotifier {
     )..autoRoute();
     final reliable = <String>[];
     final unreliable = <String>[];
-    if (blink) reliable.add('blink ×3'); else unreliable.add('blink');
-    if (smile) reliable.add('smile'); else unreliable.add('smile');
-    if (head) reliable.addAll(['head left-return', 'head right-return']);
-    else unreliable.add('head gestures currently unreliable');
-    if (finger) reliable.add('FingerSpeak gestures');
+    if (blink) {
+      reliable.add('blink ×3');
+    } else {
+      unreliable.add('blink');
+    }
+    if (smile) {
+      reliable.add('smile');
+    } else {
+      unreliable.add('smile');
+    }
+    if (head) {
+      reliable.addAll(['head left-return', 'head right-return']);
+    } else {
+      unreliable.add('head gestures currently unreliable');
+    }
+    if (finger) {
+      reliable.add('FingerSpeak gestures');
+    }
     final guidance = <String>[];
     if (!head) guidance.add('Blink recognition is reliable, but head-turn detection is inconsistent. Recalibrate head movement with the camera slightly farther away.');
     if (!finger) guidance.add('Hand tracking quality is low. Improve lighting or switch to facial communication.');

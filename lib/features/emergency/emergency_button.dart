@@ -70,6 +70,7 @@ class _EmergencyButtonState extends State<EmergencyButton> {
     );
     if (confirm == true) {
       await widget.scope.tts.speak('Emergency confirmed. Contacting your caregiver now.');
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Emergency workflow started. Contacting caregiver.')));
     }

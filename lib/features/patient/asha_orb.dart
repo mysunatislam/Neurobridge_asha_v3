@@ -38,8 +38,8 @@ class _AshaOrbState extends State<AshaOrb> with SingleTickerProviderStateMixin {
       height: widget.size,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        gradient: RadialGradient(colors: [glow.withOpacity(0.9), const Color(0xFF0E3A3A)]),
-        boxShadow: [BoxShadow(color: glow.withOpacity(0.35), blurRadius: 34, spreadRadius: 4)],
+        gradient: RadialGradient(colors: [glow.withValues(alpha: 0.9), const Color(0xFF0E3A3A)]),
+        boxShadow: [BoxShadow(color: glow.withValues(alpha: 0.35), blurRadius: 34, spreadRadius: 4)],
       ),
       child: Center(
         child: Column(mainAxisSize: MainAxisSize.min, children: [

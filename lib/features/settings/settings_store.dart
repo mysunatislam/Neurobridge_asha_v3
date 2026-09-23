@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import '../../core/database/local_store.dart';
 
 /// Caregiver preferences + quiet hours + interaction style (§55).
 class CaregiverSettings extends ChangeNotifier {

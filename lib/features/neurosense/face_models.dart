@@ -107,8 +107,12 @@ class BlinkDetector {
     _facing = _facing && f.facing;
     if (t - _start > maxMs) { state = 'UNARMED'; return []; }
     if (state == 'CLOSING') {
-      if (open) { state = 'OPEN'; _openAt = t; }
-      else if (closed && t - _start >= confirmMs) state = 'CLOSED';
+      if (open) {
+        state = 'OPEN';
+        _openAt = t;
+      } else if (closed && t - _start >= confirmMs) {
+        state = 'CLOSED';
+      }
     } else if (state == 'CLOSED' && open) {
       _opening = t;
       state = 'OPENING';
@@ -217,8 +221,9 @@ class SmileDetector {
         return [FaceGestureEvent('SMILE_HELD', t, confidence: quality)];
       }
     } else if (state == 'RETURNING') {
-      if (!low) state = hasHeld ? 'HELD' : 'SMILING';
-      else if (t - _since >= returnMs) {
+      if (!low) {
+        state = hasHeld ? 'HELD' : 'SMILING';
+      } else if (t - _since >= returnMs) {
         state = 'NEUTRAL';
         return [FaceGestureEvent('SMILE_COMPLETED', t, confidence: quality, durationMs: (t - _start).toDouble())];
       }

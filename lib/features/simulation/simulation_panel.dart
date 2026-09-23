@@ -32,7 +32,7 @@ class SimulationPanel extends StatelessWidget {
         ...scope.bus.history.reversed.take(15).map((e) => ListTile(
               dense: true,
               title: Text('${e.type.name} · ${e.source}'),
-              subtitle: Text('${e.timestamp.toIso8601String()}'),
+              subtitle: Text(e.timestamp.toIso8601String()),
             )),
       ]),
     );
@@ -60,7 +60,6 @@ class SimulationPanel extends StatelessWidget {
 
   void _tripleBlink() {
     // Feed 3 deliberate blinks through the real BlinkDetector path.
-    final cal = scope.neurosense.calibration;
     int t = 1000;
     for (int i = 0; i < 3; i++) {
       scope.neurosense.processFrame(FaceFrame(timestampMs: t, earLeft: 0.27, earRight: 0.27, faceQuality: 0.95));

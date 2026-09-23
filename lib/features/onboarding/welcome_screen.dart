@@ -119,7 +119,7 @@ class _OrbMiniState extends State<_OrbMini> with SingleTickerProviderStateMixin 
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           gradient: const RadialGradient(colors: [Color(0xFF2DD4BF), Color(0xFF0E3A3A)]),
-          boxShadow: [BoxShadow(color: const Color(0xFF2DD4BF).withOpacity(0.35), blurRadius: 30 + _c.value * 20)],
+          boxShadow: [BoxShadow(color: const Color(0xFF2DD4BF).withValues(alpha: 0.35), blurRadius: 30 + _c.value * 20)],
         ),
         child: const Center(child: Text('◉', style: TextStyle(fontSize: 40, color: Colors.white))),
       ),

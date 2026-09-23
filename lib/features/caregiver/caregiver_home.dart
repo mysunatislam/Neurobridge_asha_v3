@@ -85,7 +85,7 @@ class _CaregiverHomeState extends State<CaregiverHome> {
             Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                    color: Colors.redAccent.withOpacity(0.12),
+                    color: Colors.redAccent.withValues(alpha: 0.12),
                     border: Border.all(color: Colors.redAccent),
                     borderRadius: BorderRadius.circular(12)),
                 child: Text(v.alert!, style: const TextStyle(color: Colors.redAccent))),
@@ -216,7 +216,7 @@ class _CaregiverHomeState extends State<CaregiverHome> {
         padding: const EdgeInsets.all(18),
         decoration: BoxDecoration(
             color: const Color(0xFF0D1528), borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: c.withOpacity(0.5))),
+            border: Border.all(color: c.withValues(alpha: 0.5))),
         child: Row(children: [
           Icon(Icons.monitor_heart, color: c, size: 40),
           const SizedBox(width: 12),

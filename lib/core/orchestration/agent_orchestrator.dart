@@ -50,7 +50,7 @@ class AgentOrchestrator {
     final parsed = res.parsed;
     if (!res.ok || parsed == null) return _fallbackWakePlan();
     try {
-      final response = '${parsed['response'] ?? "You\'re awake. Do you need anything?"}';
+      final response = "${parsed['response'] ?? "You're awake. Do you need anything?"}";
       final next = parsed['next_action'] as Map<String, dynamic>?;
       final opts = <ResponseOption>[];
       if (next != null && next['response_options'] is List) {

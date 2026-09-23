@@ -45,6 +45,7 @@ class TtsService extends ChangeNotifier {
 
   String get lastSpoken => _lastSpoken;
   bool get speaking => _speaking;
+  bool get isReady => _ready;
   int get utteranceCount => _utteranceCount;
 
   Future<void> init() async {

@@ -44,7 +44,7 @@ class FingerSpeakService extends ChangeNotifier {
   String _dwellCandidate = '';
   DateTime? _dwellSince;
   String _lastFired = '';
-  DateTime? _lastRestAt;
+  DateTime? lastRestAt;
   bool _inRest = true;
   static const dwellMs = 600;
   static const double confidenceThreshold = 0.72;
@@ -126,7 +126,7 @@ class FingerSpeakService extends ChangeNotifier {
     if (predictedId == 'rest') {
       // Rest is the safe control state: always accept to re-arm.
       _inRest = true;
-      _lastRestAt = DateTime.now();
+      lastRestAt = DateTime.now();
       _dwellCandidate = '';
       return null;
     }

@@ -15,9 +15,9 @@ class DeveloperScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Developer mode')),
       body: ListView(padding: const EdgeInsets.all(16), children: [
         _kv('Face tracking quality', '${((n['tracking'] as double) * 100).toStringAsFixed(1)}%'),
-        _kv('Calibrated', '${n['calibrated']}'),
-        _kv('Last gesture', '${n['lastGesture']}'),
-        _kv('Smile intensity', '${(n['smile'] as double).toStringAsFixed(3)}'),
+        _kv('Calibrated', n['calibrated'].toString()),
+        _kv('Last gesture', n['lastGesture'].toString()),
+        _kv('Smile intensity', (n['smile'] as double).toStringAsFixed(3)),
         _kv('Vital confidence', '${v.confidence.toStringAsFixed(1)}% (${v.status})'),
         _kv('Motion gate', v.motion),
         _kv('Camera', '${scope.camera.quality} @ ${scope.camera.fps.toStringAsFixed(1)} fps (${scope.camera.mode.name})'),

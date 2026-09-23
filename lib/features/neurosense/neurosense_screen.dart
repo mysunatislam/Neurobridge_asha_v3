@@ -19,9 +19,9 @@ class NeuroSenseScreen extends StatelessWidget {
                 style: TextStyle(color: Color(0xFF93A1BB))),
             const SizedBox(height: 10),
             ListTile(title: const Text('Tracking quality'), trailing: Text('${((s['tracking'] as double) * 100).toStringAsFixed(0)}%')),
-            ListTile(title: const Text('Calibrated twin'), trailing: Text('${s['calibrated']}')),
-            ListTile(title: const Text('Last gesture'), trailing: Text('${s['lastGesture']}')),
-            ListTile(title: const Text('Smile intensity'), trailing: Text('${(s['smile'] as double).toStringAsFixed(2)}')),
+            ListTile(title: const Text('Calibrated twin'), trailing: Text(s['calibrated'].toString())),
+            ListTile(title: const Text('Last gesture'), trailing: Text(s['lastGesture'].toString())),
+            ListTile(title: const Text('Smile intensity'), trailing: Text((s['smile'] as double).toStringAsFixed(2))),
           ]),
         );
       },

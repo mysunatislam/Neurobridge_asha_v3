@@ -1,0 +1,9 @@
+# NeuroBridge Asha VitalSense AI — requirements (Python prototype)
+fastapi>=0.115
+numpy>=1.24
+scipy>=1.10
+# Optional (camera + landmarks, not needed for core tests):
+# opencv-python>=4.8
+# mediapipe>=0.10
+# tflite-runtime
+pytest>=7
